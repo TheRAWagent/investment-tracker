@@ -1,30 +1,25 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import Button from "./Components/Button";
-import Navbar from "./Components/Navbar/Navbar.js";
-import {TechnicalAnalysis,MarketOverview} from 'react-tradingview-embed'
+import Login from "./Components/Login.jsx";
+import Home from "./Components/Home";
+import Signup from "./Components/SignUp"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar/navbar";
+
 function App() {
   return (
-    <div className="App">
-      <h1 className="h1"><em>Investment Tracker</em></h1>
-      <Navbar></Navbar>
-      {/* <Button>Click me</Button> */}
-      <header className="App-header">
-        <image ></image>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <TechnicalAnalysis widgetProps={{"symbol": "NSE:RELIANCE"}} ></TechnicalAnalysis>
-        <MarketOverview ></MarketOverview>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <h1 align="center" className="h1 my-0">
+          <em>Investment Tracker</em>
+        </h1>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
