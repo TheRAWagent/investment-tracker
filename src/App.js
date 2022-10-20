@@ -4,7 +4,7 @@ import Login from "./Components/Login.jsx";
 import Home from "./Components/Home";
 import Signup from "./Components/SignUp"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar/navbar";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
